@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   ci:
@@ -14,15 +11,19 @@ jobs:
 
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@main
+        uses: actions/checkout@master
+
       - name: Setup node env 🏗
         uses: actions/setup-node@v2.1.5
         with:
           node-version: 16
           check-latest: true
+
       - name: Install dependencies 👨🏻‍💻
-        run: npm
+        run: yarn
+
       - name: Run linter 👀
-        run: npm lint
+        run: yarn lint
+
       - name: Run tests 🧪
-        run: npm test
+        run: yarn test
