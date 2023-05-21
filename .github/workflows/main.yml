@@ -20,10 +20,10 @@ jobs:
           check-latest: true
 
       - name: Install dependencies 👨🏻‍💻
-        run: yarn
+        run: npm
 
       - name: Run linter 👀
-        run: yarn lint
+        run: npm lint
 
       - name: Run tests 🧪
-        run: yarn test
+        run: npm test
